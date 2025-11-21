@@ -97,6 +97,14 @@ chmod -R 755 "$DEPLOY_TARGET"
 echo "权限设置完成"
 echo ""
 
+if openresty -t; then
+    openresty -s reload
+    echo "OpenResty reloaded successfully"
+else
+    echo "Configuration test failed, reload skipped" >&2
+    exit 1
+fi
+
 echo "=== 部署成功完成 ==="
 echo "部署时间: $(date)"
 echo "备份位置: $BACKUP_DIR/$BACKUP_NAME (如需要回滚可使用此备份)"
