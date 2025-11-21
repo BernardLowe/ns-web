@@ -64,6 +64,33 @@ Edit `src/config.ts` to configure:
 - ethers.js v6
 - CSS3
 
+## Deployment
+
+This project includes deployment scripts for easy production deployment:
+
+1. **Deploy Script** (`deploy.sh`):
+   - Pulls the latest code from the repository
+   - Updates dependencies using pnpm
+   - Builds the project for production
+   - Backs up the current version with timestamp
+   - Deploys the new version to `/usr/local/openresty/nginx/html/ns-web`
+   - Automatically rolls back to the previous version if deployment fails
+
+2. **Rollback Script** (`rollback.sh`):
+   - Lists all available backups
+   - Allows you to select a backup to restore
+   - Restores the selected backup version
+
+To deploy:
+```bash
+./deploy.sh
+```
+
+To rollback:
+```bash
+./rollback.sh
+```
+
 ## Build for Production
 
 ```bash
