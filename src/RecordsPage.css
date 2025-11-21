@@ -1,0 +1,83 @@
+/* Value cell with copy functionality */
+.value-cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.record-value.clickable {
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  max-width: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+}
+
+.record-value.clickable:hover {
+  background-color: #f3f4f6;
+}
+
+.record-value.clickable:active {
+  background-color: #e5e7eb;
+}
+
+/* Tooltip for full value on hover */
+.value-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #1f2937;
+  color: white;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  white-space: normal;
+  word-break: break-all;
+  max-width: 500px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.2s, visibility 0.2s;
+  pointer-events: none;
+}
+
+.value-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 1rem;
+  border: 6px solid transparent;
+  border-top-color: #1f2937;
+}
+
+.record-value.clickable:hover .value-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Copy feedback */
+.copy-feedback {
+  color: #10b981;
+  font-size: 0.875rem;
+  font-weight: 500;
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

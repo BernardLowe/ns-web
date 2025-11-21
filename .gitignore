@@ -1,0 +1,60 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+.out/
+
+# Logs
+logs
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Typescript cache
+*.tsbuildinfo
+
+# Vite related
+.vite/
+coverage/
+
+# Temporary files
+tmp/
+temp/
+
+# Package manager
+.pnpm-store/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+.npminstall.tgz
+
+# Local configuration files
+config.local.ts
+
+# Blockchain related
+# Hardhat files
+cache/
+artifacts/
+
+# Wallet files (if any)
+*.keystore
+*.wallet
+
+# OS generated files
+Thumbs.db
