@@ -11,7 +11,7 @@ export const hardhatRemote: Chain = {
   },
   rpcUrls: {
     default: {
-      http: ['http://hardhat.deweb.world'],
+      http: ['https://hardhat.deweb.world'],
     },
   },
   testnet: true,
